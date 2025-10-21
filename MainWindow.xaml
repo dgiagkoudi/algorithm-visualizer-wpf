@@ -1,0 +1,85 @@
+﻿<Window x:Class="AlgorithmVisualizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Algorithm Visualizer"
+        Height="500" Width="900"
+        Background="#f4f4f9"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Border CornerRadius="10" Background="White" Padding="10" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="290" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Αριστερό panel -->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0">
+                    <TextBlock Text="Algorithm Visualizer"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               Foreground="SteelBlue"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,10"/>
+
+                    <!-- Επιλογή Αλγορίθμου -->
+                    <TextBlock Text="Επέλεξε Αλγόριθμο:" FontWeight="SemiBold" Margin="5,5,5,2" />
+                    <ComboBox x:Name="AlgorithmComboBox" Margin="5" SelectedIndex="0">
+                        <ComboBoxItem Content="Bubble Sort" />
+                        <ComboBoxItem Content="Merge Sort" />
+                        <ComboBoxItem Content="Quick Sort" />
+                        <ComboBoxItem Content="Binary Search" />
+                        <ComboBoxItem Content="DFS" />
+                        <ComboBoxItem Content="BFS" />
+                    </ComboBox>
+
+                    <!-- Περιγραφή -->
+                    <TextBlock x:Name="DescriptionTextBlock"
+                               Text="Επέλεξε έναν αλγόριθμο για να δεις περιγραφή."
+                               TextWrapping="Wrap"
+                               Margin="5,5,5,10"
+                               FontStyle="Italic"
+                               Foreground="Gray" />
+
+                    <!-- Ρυθμίσεις μεγέθους -->
+                    <TextBlock Text="Μέγεθος Πίνακα / Κόμβων:" FontWeight="SemiBold" Margin="5,5,5,2" />
+                    <Slider x:Name="SizeSlider"
+                            Minimum="5"
+                            Maximum="100"
+                            Value="20"
+                            TickFrequency="5"
+                            IsSnapToTickEnabled="True"
+                            Margin="5"/>
+                    <TextBlock x:Name="SizeLabel" Text="20" HorizontalAlignment="Center" Margin="5,0,5,10"/>
+
+                    <!-- Ρυθμίσεις ταχύτητας -->
+                    <TextBlock Text="Ταχύτητα Animation (ms):" FontWeight="SemiBold" Margin="5,5,5,2" />
+                    <Slider x:Name="SpeedSlider"
+                            Minimum="50"
+                            Maximum="1000"
+                            Value="200"
+                            TickFrequency="50"
+                            IsSnapToTickEnabled="True"
+                            Margin="5"/>
+                    <TextBlock x:Name="SpeedLabel" Text="200 ms" HorizontalAlignment="Center" Margin="5,0,5,10"/>
+
+                    <!-- Κουμπιά ελέγχου -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5,20,5,5">
+                        <Button x:Name="StartButton" Content="Start" Width="75" Margin="5,0" Background="SteelBlue" Foreground="White" />
+                        <Button x:Name="PauseButton" Content="Pause" Width="75" Margin="5,0" Background="#FFB85C" Foreground="White" />
+                        <Button x:Name="StopButton" Content="Stop" Width="75" Margin="5,0" Background="Crimson" Foreground="White" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Περιοχή οπτικοποίησης -->
+                <Border Grid.Column="1" Margin="10,0,0,0" Background="LightGray" CornerRadius="10" BorderBrush="#DDD" BorderThickness="1">
+                    <Canvas x:Name="VisualizationCanvas" Background="WhiteSmoke" />
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

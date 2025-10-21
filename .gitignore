@@ -1,0 +1,40 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.class
+*.dll
+*.exe
+
+# Resharper / Rider / VS preferences
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+# NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# Visual Studio Code
+.vscode/
+
+# Publish
+*.Publish.xml
+
+# Rider temp files
+.idea/
+out/
+
+# Logs
+*.log
+
+# others
+*.lock.json
+project.lock.json
